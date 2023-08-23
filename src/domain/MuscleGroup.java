@@ -8,6 +8,6 @@ package domain;
  *
  * @author Nemanja
  */
-public enum Type {
+public enum MuscleGroup {
     
 }

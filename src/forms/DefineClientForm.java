@@ -4,7 +4,12 @@
  */
 package forms;
 
+import domain.Client;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import validator.Validator;
 
 /**
  *
@@ -15,9 +20,22 @@ public class DefineClientForm extends javax.swing.JFrame {
     /**
      * Creates new form AddForm
      */
+    
+    private Client client;
+    private String error;
+    private String check;
+    
     public DefineClientForm() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        error = "";
+        check = "Da li su podaci u redu?\n"
+                + "Ime: " + client.getFirstname() + "\n"
+                + "Prezime: " + client.getLastname() + "\n"
+                + "Faza: " + client.getPhase() + "\n"
+                + "Datum rodjenja: " + client.getBirthday().toString() + "\n"
+                + "Datum pocetka terapije: " + client.getStartingDate().toString() + "\n"
+                + "Dijagnoza: " + client.getDiagnose();
     }
 
     /**
@@ -67,6 +85,11 @@ public class DefineClientForm extends javax.swing.JFrame {
         });
 
         btnAddClient.setText("Unesi kliejnta");
+        btnAddClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddClientActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -159,44 +182,34 @@ public class DefineClientForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtLastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastnameActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtLastnameActionPerformed
+
+    private void btnAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClientActionPerformed
+        if(!checkFields()){
+            JOptionPane.showMessageDialog(this, error, "Greska", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        
+        client = new Client();
+        client.setFirstname(txtFirstname.getText());
+        client.setLastname(txtLastname.getText());
+        client.setPhase(Integer.parseInt((String) spinPhase.getValue()));
+        client.setDiagnose(txtDiagnosis.getText());
+        client.setBirthday(LocalDate.parse(sdf.format(dateBirth.getDate())));
+        client.setStartingDate(LocalDate.parse(sdf.format(dateStart.getDate())));
+        int result = JOptionPane.showConfirmDialog(this, check);
+        if(result == JOptionPane.YES_OPTION){
+            new AddExercisesForm(client).setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnAddClientActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DefineClientForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DefineClientForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DefineClientForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DefineClientForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DefineClientForm().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddClient;
@@ -216,4 +229,46 @@ public class DefineClientForm extends javax.swing.JFrame {
     private javax.swing.JTextField txtFirstname;
     private javax.swing.JTextField txtLastname;
     // End of variables declaration//GEN-END:variables
+
+    private boolean checkFields() {
+        boolean signal = true;
+        
+        if(Validator.getInstance().isEmpty(txtFirstname.getText())){
+            error+="Polje ime je prazno!\n";
+            signal = false;
+        }
+        
+        if(Validator.getInstance().isEmpty(txtLastname.getText())){
+            error+="Polje prezime je prazno!\n";
+            signal = false;
+        }
+        
+        if(Validator.getInstance().isEmpty(spinPhase.getValue())){
+            error+="Polje faza je prazno!\n";
+            signal = false;
+        }
+        
+        if(Validator.getInstance().isEmpty(txtDiagnosis.getText())){
+            error+="Polje dijagnoza je prazno!\n";
+            signal = false;
+        }
+        
+        if(Validator.getInstance().isNull(dateBirth.getDate())){
+            error+="Polje datum rodjenja je prazno!\n";
+            signal = false;
+        }
+        
+        if(Validator.getInstance().isNull(dateStart.getDate())){
+            error+="Polje datum pocetka terapije je prazno!\n";
+            signal = false;
+        }
+        
+        if(Validator.getInstance().isNotNumber(spinPhase.getValue())){
+            error+="Polje faza nije numericko!\n";
+            signal = false;
+        }
+        
+        return signal;
+        
+    }
 }

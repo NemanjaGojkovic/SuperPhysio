@@ -12,19 +12,19 @@ public class Exercise {
     private int id;
     private String name;
     private String description;
-    private String link;
-    private Type type;
+    private MuscleGroup group;
+    private Position position;
     private String image;
 
     public Exercise() {
     }
 
-    public Exercise(int id, String name, String description, String link, Type type, String image) {
+    public Exercise(int id, String name, String description, MuscleGroup group, Position position, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.link = link;
-        this.type = type;
+        this.group = group;
+        this.position = position;
         this.image = image;
     }
 
@@ -54,23 +54,6 @@ public class Exercise {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
     
     public String getName() {
         return name;
@@ -79,6 +62,24 @@ public class Exercise {
     public void setType(String name) {
         this.name = name;
     }
+
+    public MuscleGroup getGroup() {
+        return group;
+    }
+
+    public void setGroup(MuscleGroup group) {
+        this.group = group;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+    
+    
     
     
 }
