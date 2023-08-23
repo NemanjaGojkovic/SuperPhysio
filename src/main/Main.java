@@ -4,6 +4,8 @@
  */
 package main;
 
+import forms.MainForm;
+
 /**
  *
  * @author Nemanja
@@ -14,7 +16,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        new MainForm().setVisible(true);
     }
     
 }
