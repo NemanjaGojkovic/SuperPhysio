@@ -24,18 +24,22 @@ public class DefineClientForm extends javax.swing.JFrame {
     private Client client;
     private String error;
     private String check;
+    private String help;
     
     public DefineClientForm() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         error = "";
-        check = "Da li su podaci u redu?\n"
-                + "Ime: " + client.getFirstname() + "\n"
-                + "Prezime: " + client.getLastname() + "\n"
-                + "Faza: " + client.getPhase() + "\n"
-                + "Datum rodjenja: " + client.getBirthday().toString() + "\n"
-                + "Datum pocetka terapije: " + client.getStartingDate().toString() + "\n"
-                + "Dijagnoza: " + client.getDiagnose();
+        help="U ovom prozoru se unose podaci o klijentu.\n"
+                + "Neophodno je popuniti sva polja inace ce program prijaviti gresku!\n"
+                + "U polje faza je neophodno uneti numericku vrednost (ceo broj).\n"
+                + "U polja za datume je potrebno kliknuti na desni ugao polja kojim\n"
+                + "se prikazuje kalendar i na njemu izabrati zeljene datume.\n"
+                + "Kada se sva polja popune potrebno je kliknuti unesi klijenta\n"
+                + "koje ce izbaciti prozor za potvrdu o podacima. Proverite podatke\n"
+                + "koje ste uneli i ukoliko ima gresaka klikom na CANCEL ili NO se\n"
+                + "prozor gasi i podatke mozete da promenite. Ukoliko su podaci u redu\n"
+                + "kliknite na YES i otvorice se forma za dodavanje vezbi.";
     }
 
     /**
@@ -100,6 +104,11 @@ public class DefineClientForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtDiagnosis);
 
         btnHelp.setText("?");
+        btnHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHelpActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,6 +195,7 @@ public class DefineClientForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtLastnameActionPerformed
 
     private void btnAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClientActionPerformed
+        error = "";
         if(!checkFields()){
             JOptionPane.showMessageDialog(this, error, "Greska", JOptionPane.ERROR_MESSAGE);
             return;
@@ -196,16 +206,27 @@ public class DefineClientForm extends javax.swing.JFrame {
         client = new Client();
         client.setFirstname(txtFirstname.getText());
         client.setLastname(txtLastname.getText());
-        client.setPhase(Integer.parseInt((String) spinPhase.getValue()));
+        client.setPhase(Integer.parseInt(spinPhase.getValue().toString()));
         client.setDiagnose(txtDiagnosis.getText());
         client.setBirthday(LocalDate.parse(sdf.format(dateBirth.getDate())));
         client.setStartingDate(LocalDate.parse(sdf.format(dateStart.getDate())));
+        check = "Da li su podaci u redu?\n"
+                + "Ime: " + client.getFirstname() + "\n"
+                + "Prezime: " + client.getLastname() + "\n"
+                + "Faza: " + client.getPhase() + "\n"
+                + "Datum rodjenja: " + client.getBirthday().toString() + "\n"
+                + "Datum pocetka terapije: " + client.getStartingDate().toString() + "\n"
+                + "Dijagnoza: " + client.getDiagnose();
         int result = JOptionPane.showConfirmDialog(this, check);
         if(result == JOptionPane.YES_OPTION){
             new AddExercisesForm(client).setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_btnAddClientActionPerformed
+
+    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
+        JOptionPane.showMessageDialog(this, help);
+    }//GEN-LAST:event_btnHelpActionPerformed
 
     /**
      * @param args the command line arguments
