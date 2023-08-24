@@ -5,6 +5,8 @@
 package forms;
 
 import domain.Client;
+import domain.Exercise;
+import java.util.List;
 import javax.swing.JFrame;
 import validator.Validator;
 
@@ -18,8 +20,12 @@ public class AddExercisesForm extends javax.swing.JFrame {
      * Creates new form AddExercisesForm
      */
     
+    
+    
     private Client client;
     private String error;
+    private List<Exercise> exercises;
+    private List<Exercise> choosenExercises;
     
     public AddExercisesForm(Client client) {
         initComponents();
