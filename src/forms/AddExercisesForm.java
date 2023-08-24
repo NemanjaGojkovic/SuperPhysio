@@ -4,10 +4,22 @@
  */
 package forms;
 
+import database.DatabaseFactory;
 import domain.Client;
 import domain.Exercise;
+import domain.MuscleGroup;
+import domain.Position;
+import domain.Workout;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import table.WorkoutTableModel;
 import validator.Validator;
 
 /**
@@ -25,12 +37,18 @@ public class AddExercisesForm extends javax.swing.JFrame {
     private Client client;
     private String error;
     private List<Exercise> exercises;
-    private List<Exercise> choosenExercises;
+    private List<MuscleGroup> muscleGroups = new LinkedList<>();
+    private List<Position> positions = new LinkedList<>();
+    private List<Exercise> choosenExercises; 
     
     public AddExercisesForm(Client client) {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.client=client;
+        this.exercises = DatabaseFactory.getInstance().getExercises();
+        Collections.addAll(this.muscleGroups, MuscleGroup.values());
+        Collections.addAll(this.positions, Position.values());
+        populateForm();
     }
 
     /**
@@ -55,9 +73,10 @@ public class AddExercisesForm extends javax.swing.JFrame {
         btnHelp = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        comboPosition = new javax.swing.JComboBox<>();
+        comboMuscleGroup = new javax.swing.JComboBox<>();
         btnSearch = new javax.swing.JButton();
+        btnSearchAll = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,14 +130,21 @@ public class AddExercisesForm extends javax.swing.JFrame {
 
         jLabel5.setText("Pretraga po grupi mišića:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboPosition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboMuscleGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnSearch.setText("Pretraži");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
+            }
+        });
+
+        btnSearchAll.setText("Prikaži sve");
+        btnSearchAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchAllActionPerformed(evt);
             }
         });
 
@@ -132,6 +158,8 @@ public class AddExercisesForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(btnSearchAll, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -153,12 +181,12 @@ public class AddExercisesForm extends javax.swing.JFrame {
                                             .addComponent(spinReps, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(comboPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel4))
                                         .addGap(50, 50, 50)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel5)
-                                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(comboMuscleGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnAdd)
@@ -186,11 +214,13 @@ public class AddExercisesForm extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboMuscleGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRemove))
                 .addGap(18, 18, 18)
-                .addComponent(btnSearch)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSearch)
+                    .addComponent(btnSearchAll))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65)
@@ -204,22 +234,65 @@ public class AddExercisesForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
+        error="";
+        if(!checkFields()){
+            JOptionPane.showMessageDialog(this, error, "Greska", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        WorkoutTableModel etm = (WorkoutTableModel) tblExercises.getModel();
+        etm.addWorkout(new Workout((Exercise) comboExercise.getSelectedItem(), Integer.parseInt(spinReps.getValue().toString())));
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        // TODO add your handling code here:
+        try {
+            int row = tblExercises.getSelectedRow();
+            if(row==-1){
+                JOptionPane.showMessageDialog(this, "Nijedna vezba nije izabrana");
+                return;
+            }
+            WorkoutTableModel etm = (WorkoutTableModel) tblExercises.getModel();
+            etm.removeWorkout(row);
+        } catch (Exception ex) {
+            Logger.getLogger(AddExercisesForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+      
+        if(!Validator.getInstance().isNull(comboPosition.getSelectedItem()) &&
+                !Validator.getInstance().isNull(comboMuscleGroup.getSelectedItem())){
+            JComboBox comboBoxExercises = new JComboBox(new DefaultComboBoxModel(mixFilter().toArray()));
+            comboExercise.setModel(comboBoxExercises.getModel());
+            comboExercise.setSelectedIndex(-1);
+        }
+        
+        if(!Validator.getInstance().isNull(comboPosition.getSelectedItem()) &&
+                Validator.getInstance().isNull(comboMuscleGroup.getSelectedItem())){
+            JComboBox comboBoxExercises = new JComboBox(new DefaultComboBoxModel(positionFilter().toArray()));
+            comboExercise.setModel(comboBoxExercises.getModel());
+            comboExercise.setSelectedIndex(-1);
+        }
+        
+        if(Validator.getInstance().isNull(comboPosition.getSelectedItem()) &&
+                !Validator.getInstance().isNull(comboMuscleGroup.getSelectedItem())){
+            JComboBox comboBoxExercises = new JComboBox(new DefaultComboBoxModel(muscleGroupFilter().toArray()));
+            comboExercise.setModel(comboBoxExercises.getModel());
+            comboExercise.setSelectedIndex(-1);
+        }
+        
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
-        if(!checkFields()){
-            
-        }
+        
     }//GEN-LAST:event_btnGenerateActionPerformed
+
+    private void btnSearchAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchAllActionPerformed
+        comboMuscleGroup.setSelectedIndex(-1);
+        comboPosition.setSelectedIndex(-1);
+        JComboBox comboBoxExercises = new JComboBox(new DefaultComboBoxModel(exercises.toArray()));
+        comboExercise.setModel(comboBoxExercises.getModel());
+        comboExercise.setSelectedIndex(-1);
+    }//GEN-LAST:event_btnSearchAllActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,9 +305,10 @@ public class AddExercisesForm extends javax.swing.JFrame {
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnRemove;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSearchAll;
     private javax.swing.JComboBox<String> comboExercise;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> comboMuscleGroup;
+    private javax.swing.JComboBox<String> comboPosition;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -264,5 +338,56 @@ public class AddExercisesForm extends javax.swing.JFrame {
         }
         
         return signal;
+    }
+
+    private void populateForm() {
+        WorkoutTableModel etm = new WorkoutTableModel();
+        tblExercises.setModel(etm);
+        
+        JComboBox comboBoxExercises = new JComboBox(new DefaultComboBoxModel(exercises.toArray()));
+        comboExercise.setModel(comboBoxExercises.getModel());
+        
+        JComboBox comboBoxMuscleGroup = new JComboBox(new DefaultComboBoxModel(muscleGroups.toArray()));
+        comboMuscleGroup.setModel(comboBoxMuscleGroup.getModel());
+        
+        JComboBox comboBoxPosition = new JComboBox(new DefaultComboBoxModel(positions.toArray()));
+        comboPosition.setModel(comboBoxPosition.getModel());
+        
+        comboExercise.setSelectedIndex(-1);
+        comboMuscleGroup.setSelectedIndex(-1);
+        comboPosition.setSelectedIndex(-1);
+        
+        
+    }
+
+    private List<Exercise> mixFilter() {
+        List<Exercise> mix = new LinkedList<>();
+        for (Exercise exercise : exercises) {
+            if(exercise.getGroup().equals((MuscleGroup)comboMuscleGroup.getSelectedItem()) && 
+                    exercise.getPosition().equals((Position)comboPosition.getSelectedItem())){
+                mix.add(exercise);
+            }
+        }
+        return mix;
+    }
+
+    private List<Exercise> muscleGroupFilter() {
+        List<Exercise> mg = new LinkedList<>();
+        for (Exercise exercise : exercises) {
+            if(exercise.getGroup().equals((MuscleGroup)comboMuscleGroup.getSelectedItem())){
+                mg.add(exercise);
+            }
+        }
+        return mg;
+    }
+
+    private List<Exercise> positionFilter() {
+        List<Exercise> pos = new LinkedList<>();
+        for (Exercise exercise : exercises) {
+            if(exercise.getPosition().equals((Position)comboPosition.getSelectedItem())){
+                pos.add(exercise);
+            }
+        }
+        return pos;
     }
 }

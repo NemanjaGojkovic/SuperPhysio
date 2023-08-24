@@ -9,5 +9,5 @@ package domain;
  * @author Nemanja
  */
 public enum Position {
-    
+    LEDJA, STOMAK;
 }

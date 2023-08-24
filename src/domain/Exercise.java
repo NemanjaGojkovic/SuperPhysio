@@ -78,6 +78,11 @@ public class Exercise {
     public void setPosition(Position position) {
         this.position = position;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
     
     
     
