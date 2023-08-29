@@ -25,8 +25,8 @@ public class DatabaseFactory {
     public static DatabaseFactory instance;
     
     private DatabaseFactory(){
-        Exercise e1 = new Exercise(0, "Ime jedan", "", MuscleGroup.NOGE, Position.STOMAK, "");
-        Exercise e2 = new Exercise(0, "Ime dva", "", MuscleGroup.LEDJA, Position.LEDJA, "");
+        Exercise e1 = new Exercise(0, "Ime jedan", "", MuscleGroup.NOGE, Position.STOMAK, "", 1);
+        Exercise e2 = new Exercise(0, "Ime dva", "", MuscleGroup.LEDJA, Position.LEDJA, "", 2);
         
         exercises.add(e1);
         exercises.add(e2);

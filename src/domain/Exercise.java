@@ -15,19 +15,22 @@ public class Exercise {
     private MuscleGroup group;
     private Position position;
     private String image;
+    private int type;
 
     public Exercise() {
     }
 
-    public Exercise(int id, String name, String description, MuscleGroup group, Position position, String image) {
+    public Exercise(int id, String name, String description, MuscleGroup group, Position position, String image, int type) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.group = group;
         this.position = position;
         this.image = image;
+        this.type = type;
     }
 
+    
     
     
 
@@ -78,6 +81,16 @@ public class Exercise {
     public void setPosition(Position position) {
         this.position = position;
     }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+    
+    
 
     @Override
     public String toString() {

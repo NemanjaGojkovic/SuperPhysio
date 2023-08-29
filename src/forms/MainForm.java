@@ -47,6 +47,11 @@ public class MainForm extends javax.swing.JFrame {
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         btnExit.setText("Isključi");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         btnStart.setText("Pokreni");
         btnStart.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +94,10 @@ public class MainForm extends javax.swing.JFrame {
         new DefineClientForm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnStartActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
