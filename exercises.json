@@ -1,0 +1,18 @@
+[
+    {
+        "id" : 1,
+        "name" : "Vezba disanja",
+        "description" : "",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 2,
+        "name" : "Most",
+        "description" : "Ležimo na leđima, kolena su savijena, oslonac je na petama, podižemo kukove ka plafonu i u krajnjoj poziciji zadržimo 3 sekunde",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    }
+]

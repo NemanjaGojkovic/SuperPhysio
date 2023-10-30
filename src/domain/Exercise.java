@@ -4,6 +4,8 @@
  */
 package domain;
 
+import java.util.List;
+
 /**
  *
  * @author Nemanja
@@ -12,22 +14,20 @@ public class Exercise {
     private int id;
     private String name;
     private String description;
-    private MuscleGroup group;
+    private List<MuscleGroup> groups;
     private Position position;
     private String image;
-    private int type;
 
     public Exercise() {
     }
 
-    public Exercise(int id, String name, String description, MuscleGroup group, Position position, String image, int type) {
+    public Exercise(int id, String name, String description, List<MuscleGroup> groups, Position position, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.group = group;
+        this.groups = groups;
         this.position = position;
         this.image = image;
-        this.type = type;
     }
 
     
@@ -66,12 +66,12 @@ public class Exercise {
         this.name = name;
     }
 
-    public MuscleGroup getGroup() {
-        return group;
+    public List<MuscleGroup> getGroups() {
+        return groups;
     }
 
-    public void setGroup(MuscleGroup group) {
-        this.group = group;
+    public void setGroups(List<MuscleGroup> groups) {
+        this.groups = groups;
     }
 
     public Position getPosition() {
@@ -82,16 +82,7 @@ public class Exercise {
         this.position = position;
     }
 
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
-    
-    
-
+   
     @Override
     public String toString() {
         return name;
