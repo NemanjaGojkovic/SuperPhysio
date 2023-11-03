@@ -4,10 +4,12 @@
  */
 package domain;
 
+import com.sun.source.tree.VariableTree;
+
 /**
  *
  * @author Nemanja
  */
 public enum MuscleGroup {
-    ZADNJA_LOZA, LEDJA, GLUTEUS;
+    ZADNJA_LOZA, LEDJA, GLUTEUS, STOMAK, VRAT, RAMENI_POJAS, SKOCNI_ZGLOB, ROLER, ISTEZANJE, ROLANJE, RASTERECUJUCI_POLOZAJI, KVADRICEPS, LISTOVI;
 }

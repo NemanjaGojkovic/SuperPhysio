@@ -1,7 +1,7 @@
 [
     {
         "id" : 1,
-        "name" : "Vezba disanja",
+        "name" : "Vežba disanja",
         "description" : "",
         "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
         "position" : "LEDJA",
@@ -14,5 +14,471 @@
         "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
         "position" : "LEDJA",
         "image" : ""
+    },
+    {
+        "id" : 3,
+        "name" : "Most sa elastičnom trakom",
+        "description" : "Ležimo na leđima, kolena su savijena, stavimo elastičnu traku oko kolena, oslonac je na petama, podižemo kukove ka plafonu i u krajnjoj poziciji zadržimo 3 sekunde",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 4,
+        "name" : "Most sa širenjem kolena",
+        "description" : "Ležimo na leđima, kolena su savijena, oslonac je na petama, podižemo kukove ka plafonu i širimo kolena, u krajnjoj poziciji zadržimo 3 sekunde",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 5,
+        "name" : "Most sa širenjem kolena sa elastičnom trakom oko kolena",
+        "description" : "Ležimo na leđima, kolena su savijena, oslonac je na petama, podižemo kukove ka plafonu i širimo kolena, u krajnjoj poziciji zadržimo 3 sekunde",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 6,
+        "name" : "Most na jednoj nozi",
+        "description" : "Ležimo na leđima, kolena savijena, prekrstimo jednu nogu preko druge, oslonac je na peti, podižemo kukove ka plafonu i u krajnjoj poziciji zadržimo 3 sekunde",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 7,
+        "name" : "Most sa rolerom između nogu",
+        "description" : " Ležimo na leđima, kolena savijena, postavimo roler između nogu, oslonac na pete, podižemo kukove ka plafonu i u krajnoj poziciji zadržimo 3 sekunde.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 8,
+        "name" : "Most sa nogama na roleru, savijena kolena",
+        "description" : "Ležimo na leđima, kolena su savijena, oslonac je na roleru, podižemo kukove ka plafonu i roler rolamo od sebe dok se noge skroz ne opruže, spustimo kukove na pod i rolamo roler nazad u početni položaj.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 9,
+        "name" : "Most sa nogama na roleru, opružena kolena",
+        "description" : "Ležimo na leđima, kolena su opružena, oslonac je na roleru, podižemo kukove ka plafonu i roler rolamo ka sebi dok se noge skroz ne saviju, spustimo kukove na pod i rolamo roler nazad u početni položaj.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 10,
+        "name" : "Primicači kukova",
+        "description" : "Ležimo na leđima, kolena savijena, stavljamo fitnes loptu između kolena i stiskamo 3 sekunde.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 11,
+        "name" : "Odmicači kukova",
+        "description" : "Ležimo na leđima, kolena savijena, stavljamo elastičnu traku oko kolena, širimo kolena u stranu, zadržimo 3 sekunde.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 12,
+        "name" : "Podizanje kukova, noge na fitnes lopti",
+        "description" : "Ležimo na leđima, kolena opružena, pete na fitnes lopti, podižemo kukove i zadržimo 3 sekunde u krajnoj poziciji.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 13,
+        "name" : "Podizanje kukova i savijanje kolena, noge na fitnes lopti",
+        "description" : "Ležimo na leđima, kolena opružena, pete na fitnes lopti, podižemo kukove i savijamo kolena do kraja, zatim lagano opružamo kolena i vraćamo kukove na pod.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 14,
+        "name" : "Table",
+        "description" : "Oslonac na šakama i petama, podižemo kukove pa plafonu, održavamo pravu linuju trupa 3 sekunde i polako nazad.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 15,
+        "name" : "Pelvic tilt napred nazad",
+        "description" : "Ležimo na leđima, kolena savijena, priljubljujemo kičmu uz podlogu, zatim odvlačimo kičmu što dalje od podloge, zadržavamo 3 sekunde u svakom krajnjem položaju.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 16,
+        "name" : "Pelvic tilt levo desno",
+        "description" : "Ležimo na leđima, kolena opružena, pomeramo karlicu u jednu stranu, zadržimo 3 sekunde, zatim u drugu stranu i takođe zadržimo 3 sekunde.",
+        "groups" : ["LEDJA", "ZADNJA_LOZA", "GLUTEUS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 17,
+        "name" : "Dodirivanje kolena",
+        "description" : "Ležimo na leđima, kolena savijena, ruke na butinama, podižemo trup ka kolenima dok ruke ne dodirnu kolena, u krajnoj poziciji zadržimo 3 sekunde",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 18,
+        "name" : "Kratki trbušnjaci",
+        "description" : "Ležimo na leđima, kolena savijena pod 90 stepeni u vazduhu, ruke na potiljku, podižemo trup ka kolenima, zadržimo 3 sekunde i polako nazad",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 19,
+        "name" : "Half dead bug, ruke ispod kukova, savijena kolena",
+        "description" : "Ležimo na leđima, stavimo šake ispod kukova, kolena savijena pod 90 stepeni u vazduhu, opružamo jednu nogu ka podu, zadržimo 3 sekunde i vratimo nazad",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 20,
+        "name" : "Half dead bug, rukoe ispod kukova, naizmenično opružanje nogu",
+        "description" : " Ležimo na leđima, stavimo šake ispod kukova, noge opružene ka plafonu, spuštamo jednu nogu ka podu, zadržimo 3 sekunde i vratimo nazad",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 21,
+        "name" : "Half dead bug, opružanje one noge",
+        "description" : "Ležimo na leđima, stavimo šake ispod kukova, noge opružene ka plafonu, spuštamo obe noge ka podu, zadržimo 3 sekunde i vratimo nazad",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 22,
+        "name" : "Half dead bug",
+        "description" : "Ležimo na leđima, ruke opružene ka plafonu, kolena savijena pod 90 stepeni, opružamo jednu nogu ka podu, zadržimo 3 sekunde i vratimo nazad",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 23,
+        "name" : "Dead bug",
+        "description" : "Ležimo na leđima, ruke opružene ka plafonu, kolena savijena pod 90 stepeni, opružamo jednu nogu i suprotnu ruku ka podu, zadržimo 3 sekunde i vratimo u početnu poziciju",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 24,
+        "name" : "Dodirivanje peta",
+        "description" : "Ležimo na leđima, kolena savijena, ruke pored tela, podižemo ramena malo ka plafonu, da lopatice ne dodiruju pod i naizmenično se pomeramo u stranu da dodirnemo pete",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 25,
+        "name" : "Kosi trubušnjaci",
+        "description" : "Ležimo na leđima, kolena savijena, prekrstimo jednu nogu preko druge, ruke su na potiljku, rotiramo lakat ka prekrštenoj nozi, zadržimo 3 sekunde u krajnjoj poziciji",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 26,
+        "name" : "Rotacija donjeg dela trupa",
+        "description" : "Ležimo na leđima, kolena pod 90 stepeni u vazduhu, rotiramo oba kolena u jednu pa u drugu stranu, zadržimo 3 sekunde",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 27,
+        "name" : "Dodirivanje plafona",
+        "description" : "Ležimo na leđima, noge opružene, ruke opružene ka plafonu, podižemo trup sa rukama ka plafonu",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 28,
+        "name" : "Noge ka plafonu",
+        "description" : "Ležimo na leđima, noge opružene ka plafonu, podižemo obe noge i karlicu da stopalima dodirnemo plafon",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 29,
+        "name" : "Izometrijska dijagonala trbušnjaka",
+        "description" : "Ležimo na leđima, kolena savijena, jedno koleno povlačimo ka grudima a suprotnom rukom, sa opruženim laktom, guramo to koleno nazad, u sredini zadržimo 3 sekunde",
+        "groups" : ["STOMAK"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 30,
+        "name" : "Ruke pod 90 stepeni",
+        "description" : "Ležimo na leđima, postavljamo laktove pod 90 stepeni, guramo laktovima pod, spajamo lopatice, zadržimo 3 sekunde",
+        "groups" : ["VRAT", "RAMENI_POJAS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 31,
+        "name" : "Ruke pod 45 stepeni",
+        "description" : "Ležimo na leđima, postavljamo laktove pod 45 stepeni, guramo laktovima pod, spajamo lopatice, zadržimo 3 sekunde",
+        "groups" : ["VRAT", "RAMENI_POJAS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 32,
+        "name" : "Ruke opružene pored tela",
+        "description" : "Ležimo na leđima, guramo šakama pod, spajamo lopatice, zadržimo 3 sekunde",
+        "groups" : ["VRAT", "RAMENI_POJAS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 33,
+        "name" : "Podizanje glave prema kolenu",
+        "description" : "Ležimo na leđima, kolena savijena, podižemo glavu da pogled ide između nogu, zadržimo 3 sekunde i polako nazad",
+        "groups" : ["VRAT", "RAMENI_POJAS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 34,
+        "name" : "Podizanje lica prema plafonu, guranje podloge",
+        "description" : "Ležimo na leđima, kolena savijena, podižemo glavu da lice ide prema plafonu, zadržimo 3 sekunde i kada vratimo nazad glavu, guramo podlogu i zadržimo 3 sekunde",
+        "groups" : ["VRAT", "RAMENI_POJAS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 35,
+        "name" : "Brada prema grudima, brada od grudi",
+        "description" : "Ležimo na leđima, kolena savijena, potiljak u konstantnom kontaktu sa podlogom, povlačimo bradu ka grudima, zadržimo 3 sekunde, zatim odvlačimo bradu što dalje od grudi i zadržimo 3 sekunde",
+        "groups" : ["VRAT", "RAMENI_POJAS"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 36,
+        "name" : "Razgibavanje skočnog zgloba",
+        "description" : "Rotiramo pun krug stopalima u jednu pa u drugu stranu",
+        "groups" : ["SKOCNI_ZGLOB", "KVADRICEPS", "LISTOVI", "ROLER"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 37,
+        "name" : "Stopala ka telu i od tela",
+        "description" : "Potkolenice su na roleru, oba stopala povlačimo ka sebi, zadržimo 3 sekunde i pomeramo ih što više od sebe i zadržimo 3 sekunde",
+        "groups" : ["SKOCNI_ZGLOB", "KVADRICEPS", "LISTOVI", "ROLER"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 38,
+        "name" : "Taban ka tabanu",
+        "description" : "Potkolenice su na roleru, skočni zglob pod 90 stepeni, okrećemo taban ka tabanu, zadžimo 3 sekunde, zatim rotitamo taban od tabana i zadržimo 3 sekunde",
+        "groups" : ["SKOCNI_ZGLOB", "KVADRICEPS", "LISTOVI", "ROLER"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 39,
+        "name" : "Savijanje i opruđanje prstiju",
+        "description" : "Potkolenice su na roleru, skočni zglob pod 90 stepeni, savijamo prste maksimalno i zadržimo 3 sekunde, zatim otvaramo prste maksimalno i zadržimo 3 sekunde",
+        "groups" : ["SKOCNI_ZGLOB", "KVADRICEPS", "LISTOVI", "ROLER"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 40,
+        "name" : "Taban ka tabanu sa elastičnom trakom",
+        "description" : "Potkolenice su na roleru, skočni zglob pod 90 stepeni, stavimo elastičnu traku oko stopala, okrećemo taban ka tabanu, zadžimo 3 sekunde, zatim rotitamo taban od tabana i zadržimo 3 sekunde",
+        "groups" : ["SKOCNI_ZGLOB", "KVADRICEPS", "LISTOVI", "ROLER"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 41,
+        "name" : "Stopala ka telu sa elastičnom trakom",
+        "description" : "Potkolenice su na roleru, stavljamo elastičnu traku oko tabana, stopalo povlačimo ka sebi, zadržimo 3 sekunde i pomeramo  što više od sebe i zadržimo 3 sekunde",
+        "groups" : ["SKOCNI_ZGLOB", "KVADRICEPS", "LISTOVI", "ROLER"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 42,
+        "name" : "Aktivacija kvadricepsa",
+        "description" : "Natkolenice su na roleru, povlačimo stopalo ka sebi, maksimalno stiskamo kvadriceps tako što maksimalno opružamo koleno a da ne dižemo natkolenicu sa rolera. Držimo maksimalno stisnut kvadriceps 6 sekundi pa radimo drugu nogu 6 sekundi i tako naizmenično",
+        "groups" : ["SKOCNI_ZGLOB", "KVADRICEPS", "LISTOVI", "ROLER"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 43,
+        "name" : "Aktivacija kvadricepsa sa podizanjem noge",
+        "description" : "Natkolenice su na roleru, povlačimo stopalo ka sebi, maksimalno stiskamo kvadriceps tako što maksimalno opružamo koleno i podižemo natkolenicu sa rolera ka plafonu. Držimo maksimalno stisnut kvadriceps 6 sekundi pa radimo drugu nogu 6 sekundi i tako naizmenično",
+        "groups" : ["SKOCNI_ZGLOB", "KVADRICEPS", "LISTOVI", "ROLER"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 44,
+        "name" : "Jedna noga prema grudima",
+        "description" : "Ležimo na leđima, kolena savijena, jedno koleno povlačimo ka grudima",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 45,
+        "name" : "Obe noge prema grudima",
+        "description" : "Ležimo na leđima, kolena savijena, oba kolena povlačimo ka grudima",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 46,
+        "name" : "Istezanje piriformisa",
+        "description" : "Ležimo na leđima, kolena savijena, prekrstimo jednu nogu preko druge, povlačimo kolena ka grudima, rukama hvatamo potkolenicu donje noge i povlačimo jače ka grudima",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 47,
+        "name" : "Mc Kenzie položaj",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 48,
+        "name" : "Rolanje potkolenice",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 49,
+        "name" : "Rolanje zadnje lože",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 50,
+        "name" : "Rolanje kvadricepsa",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 51,
+        "name" : "Rolanje IT band",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 52,
+        "name" : "Istezanje zadnje lože, obe noge",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 53,
+        "name" : "Istezanje zadnje lože, jedna noga",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 54,
+        "name" : "Istezanje zadnje lože i aduktora dodirivanje sredine",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 55,
+        "name" : "Istezanje zadnje lože i aduktora dodirivanje prstiju",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 56,
+        "name" : "Istezanje kvadricepsa naizmenično",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 57,
+        "name" : "Istezanje kvadricepsa",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 58,
+        "name" : "Istezanje stomaka",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 59,
+        "name" : "Duboko istezanje zadnje lože i kukova",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
+    },
+    {
+        "id" : 60,
+        "name" : "Otvaranje kukova",
+        "description" : "",
+        "groups" : ["ISTEZANJE", "ROLANJE", "RASTERECUJUCI_POLOZAJI"],
+        "position" : "LEDJA",
+        "image" : ""
     }
+    
+    
 ]
